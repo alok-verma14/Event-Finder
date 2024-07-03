@@ -1,0 +1,51 @@
+<% layout("/layouts/boilerPlate") %>
+
+<body>
+    <div class="card text-center mt-4 mb-5">
+        <div class="card-header">
+            <h3><i> Welcome to Edit my Profile page </i></h3>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><i>@<%= user.username %></i></h5>
+          <p class="card-text"><i>You User ID: <%= user._id %></i></p>
+        </div>
+    
+        <form class="mx-auto" method="POST" action="/events/<%= user._id %>/editUser?_method=PUT" enctype="multipart/form-data">
+           
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Enter Your Full Name: </label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="send[fullname]" value="<%= user.fullname %>">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Update Your Profile Photo: </label>
+                <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="userImage" value="<%= user.image %>" >
+              </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Enter Your State: </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="send[state]" value="<%= user.state %>">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Enter Your Country: </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="send[country]" value="<%= user.country %>">
+            </div>
+            
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email ID:  </label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value="<%= user.email %>" readonly>
+            </div>
+            
+            <div class="alert alert-warning" role="alert">
+                Kindly fill your information carefully!
+            </div>
+            
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+    
+            <button type="submit" class="btn btn-primary mb-3">Update</button>
+    
+          </form>
+      </div>
+    
+</body>

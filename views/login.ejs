@@ -1,0 +1,57 @@
+<% layout("/layouts/boilerPlate") %>
+<body style="background-color: 	#343434;">
+    <% if(success && success.length){ %>
+        <div class="alert alert-success alert-dismissible fade show col-3 offset-6" role="alert" style="font-family: cursive;">
+            <%= success %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        
+        </div>
+        <% } %>
+        
+        <% if(error && error.length){ %>
+            <div class="alert alert-danger alert-dismissible fade show col-3 offset-6" role="alert" style="font-family: cursive;">
+                <%= error %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            
+            </div>
+            <% } %>
+
+    <div class="card text-center mt-4 mb-5">
+        <div class="card-header">
+            <h3><i style="font-family: Arial, Helvetica, sans-serif;"> Login to the Event Finder </i></h3>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title" style="font-family: Arial, Helvetica, sans-serif;">An easy way to become a part of it!</h5>
+          <p class="card-text" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Fill this form and post your events easily...</p>
+        </div>
+    
+        <form class="mx-auto" method="POST" action= "/events/login">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Enter Username: </label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username" name="username">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Enter Password: </label>
+                <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Password" name="password">
+                <div id="emailHelp" class="form-text" style="font-family: cursive;">We'll never share your password with anyone else.</div>
+            </div>
+            
+            <!-- <div class="alert alert-warning" role="alert">
+                kindly read the above filled information twice before checking the checkbox.
+            </div>
+            
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div> -->
+    
+            <button type="submit" class="btn btn-success mb-3" style="font-family: Arial, Helvetica, sans-serif;">Login</button>
+    
+          </form>
+    
+        <div class="card-footer text-body-secondary">
+          <h4><i>New User? Register Here</i> <a href="/events/register" role="button" class="btn btn-secondary" style="font-family: Arial, Helvetica, sans-serif;"> Register</a></h3>
+        </div>
+      </div>  
+</body>
+

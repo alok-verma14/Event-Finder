@@ -1,0 +1,41 @@
+<% layout("/layouts/boilerPlate") %>
+<body style="background-color: #353935">
+        <div class="row">
+          <% if(success && success.length){ %>
+            <div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert">
+                <%= success %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            
+            </div>
+            <% } %>
+            
+            <% if(error && error.length){ %>
+                <div class="alert alert-danger alert-dismissible fade show col-6 offset-3" role="alert">
+                   <%= error %> 
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                
+                </div>
+            <% } %>
+        </div>
+        
+    <p class="h3 align-middle" style="color: aliceblue;"><i style="font-family: cursive;">Welcome to the Event Finder</i></p>
+    <hr style="color: aliceblue;">            
+            <div class="row row-cols-1 row-cols-md-3 mb-3 g-4">
+                <% for(let event of allEvents){ %>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="http://localhost:5000/uploads/<%= event.image %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title" style="font-family:Arial, Helvetica, sans-serif ;"><%= event.title%></h5>
+                      <a class="card-text" style="font-size: large; text-decoration: none; color: black; font-family:Arial, Helvetica, sans-serif"><%= event.guest%></a>
+                      <a class="tab" style="font-size: medium; text-decoration: none; color: #301934;"><%= event.date%></a>
+                      <p class="card-text" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><%= event.description%></p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-body-secondary"><a href="/events/<%= event._id %>/show" role="button" class="btn btn-secondary"><i class="fa-solid fa-circle-info"></i> Read More</a></small>
+                    </div>
+                  </div>
+                </div>
+                <%}%>
+            </div>
+</body>

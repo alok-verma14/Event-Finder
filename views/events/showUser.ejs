@@ -1,0 +1,54 @@
+<% layout("/layouts/boilerPlate") %>
+
+<body style="background-color: #1B1212">
+<div class="container-fluid ms-5">
+    <div class="row">
+        <div class="row mt-3 mb-3 col-sm-4">
+            <div class="card mb-3" >
+                    <img src="http://localhost:5000/uploads/<%= user.userImage %>" class="card-img-top mt-3 mb-3" alt="User's Image">   
+            </div>    
+        </div>
+        <div class="row col-sm-8 mb-4 mt-3 ms-2">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Welcome @<i><%= currentUser.username %></i></h5>
+                    <p class="card-text">This is your own area where you know about yourself and your events better...!</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Your User Id: <i><%= user._id %></i></li>
+                        <li class="list-group-item">Your Full Name: <i><%= user.fullname %></i></li>
+                        <li class="list-group-item">Your Email Id: <i><%= user.email %></i></li>
+                        <li class="list-group-item">Your Username: <i><%= user.username %></i></li>
+                        <a class="btn btn-warning mt-3" href="/events/<%= user._id %>/editUser" role="button"><i class="fa-regular fa-pen-to-square"></i> Update My Profile</a>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <h3 style="color: aliceblue;"><i>Total Event Posted (<%= events.length %>)</i></h3>
+
+       <% if(events){ %>
+            <% for(event of events){ %>
+                <div class="row offset-3" >
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                          <div class="col-md-4 mt-2">
+                            <img src="http://localhost:5000/uploads/<%= event.image %>" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title"><%= event.title %></h5>
+                              <p class="card-text"><%= event.description %></p>
+                              <p class="card-text">&#8377;<%= event.fees?.toLocaleString("en-IN") %></p>
+                              <p class="card-text"><a href="/events/<%= event.id %>/show" class="text-body-secondary">Know More</a></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+          <%  } %>
+      <%  } %>
+            </div>
+        
+
+        
+</body>

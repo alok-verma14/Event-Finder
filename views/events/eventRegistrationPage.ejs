@@ -1,0 +1,47 @@
+<% layout("/layouts/boilerPlate") %>
+<div class="card text-center mt-4 mb-5">
+    <div class="card-header">
+        <h3><i> Event Registration Form </i></h3>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= event.title%></h5>
+      <p class="card-text"><%= event.description %></p>
+    </div>
+
+    <form class="mx-auto" method="POST" action="/events/:id/eventRegister">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Enter Your Email Id: </label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Enter Your Phone Number: </label>
+            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="number">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Event ID: </label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="eventId" value="<%= event._id %>" readonly>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Event registration fees: </label>
+            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="fees" value="<%= event.fees %>" readonly>
+        </div>
+        
+        <div class="alert alert-warning" role="alert">
+            Cancellation Fee is not availabe
+        </div>
+        
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary mb-3">Purchase</button>
+
+      </form>
+
+    <div class="card-footer text-body-secondary">
+      <h4><i>Thank you for your valuable time!</i></h3>
+    </div>
+  </div>
+

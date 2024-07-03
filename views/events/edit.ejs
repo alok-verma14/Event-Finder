@@ -1,0 +1,83 @@
+<% layout("/layouts/boilerPlate") %>
+<body>
+   
+    <div class="card text-center mt-4 mb-5">
+        <div class="card-header">
+            <h3><i> Welcome to Edit My Event page </i></h3>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Event name: <i><%= event.title %></i></h5>
+          <p class="card-text">Event ID:<i> <%= event._id %></i></p>
+        </div>
+    
+        <form class="mx-auto" method="POST" action="/events/<%= event._id %>?_method=PUT" enctype="multipart/form-data">
+           
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Enter Event Title: </label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="send[title]" value="<%= event.title %>">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Enter Event Description: </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="send[description]" value="<%= event.description %>">
+              </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Update Event Image: </label>
+                <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="eventImage" value="<%= event.image %>" >
+              </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Enter Your Address: </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="send[address]" value="<%= event.address %>">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Enter Your City: </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="send[city]" value="<%= event.city %>">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Enter Your Country: </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="send[country]" value="<%= event.country %>">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Enter Your Guest Name: </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="send[guest]" value="<%= event.guest %>">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Enter Your Contact Name: </label>
+                <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="send[contact]" value="<%= event.contact %>">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Enter Registration Fees:  </label>
+                <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="send[fees]" value="<%= event.fees %>">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Enter Time : (example- 2:30 PM)  </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="send[time]" value="<%= event.time %>">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Event Date: (example- July 02, 2024): </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="send[date]" value="<%= event.date %>">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Enter Event's Pincode:  </label>
+                <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="send[pincode]" value="<%= event.pincode %>">
+            </div>
+            
+            <div class="alert alert-warning" role="alert">
+                Kindly fill your information carefully!
+            </div>
+            
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">All the information are correct</label>
+            </div>
+            <div class="mb-2 form-check">
+                <button type="submit" class="btn btn-primary mb-3">Update</button>            
+            </div>
+          </form>
+          <div class="mb-3 form-check">
+            <form action="/events/<%= event._id %>?_method=DELETE" method="POST">
+                <button class="btn btn-danger">Delete</button>
+            </form>            
+        </div>
+      </div>
+    
+</body>

@@ -1,0 +1,63 @@
+<% layout("/layouts/boilerPlate") %>
+<body style="background-color: 	#343434;">
+    <div class="card text-center mt-4 mb-5">
+        <div class="card-header">
+            <h3><i style="font-family: Arial, Helvetica, sans-serif;"> Register yourself with our platform </i></h3>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title" style="font-family: Arial, Helvetica, sans-serif;">An easy way to become a part of it!</h5>
+          <p class="card-text" style="font-family: Arial, Helvetica, sans-serif;">Fill this form and post your events easily...</p>
+        </div>
+    
+        <form class="mx-auto" method="POST" action= "/events/register" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Enter Full Name: </label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="fullname">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Enter Your Email ID: </label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                <div id="emailHelp" class="form-text" style="font-family: cursive;">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Enter Your State: </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="state">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Enter Your Country: </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="country">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Set Your Username For Your Profile: </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username">
+                <div id="emailHelp" class="form-text" style="font-family: cursive;">Set the username carefully as it will not be changed after successful registration</div>
+
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Set Your Password </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="password">
+                <div id="emailHelp" class="form-text" style="font-family: cursive;">Set the Strong Password</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Add Your Profile Photo: </label>
+                <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="image">
+                <div id="emailHelp" class="form-text" style="font-family: cursive;">If you don't have then skip it and add it later after log in</div>
+            </div>
+            <div class="alert alert-warning" role="alert" style="font-family: Arial, Helvetica, sans-serif;">
+                kindly read the above filled information twice before checking the checkbox.
+            </div>
+            
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1" style="font-family: Arial, Helvetica, sans-serif;">Check me out</label>
+            </div>
+    
+            <button type="submit" class="btn btn-success mb-3" style="font-family: Arial, Helvetica, sans-serif;">Register</button>
+    
+          </form>
+    
+        <div class="card-footer text-body-secondary">
+          <h4><i style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Already Registered?</i> <a href="/events/login" role="button" class="btn btn-secondary" style="font-family: Arial, Helvetica, sans-serif;"> Login</a></h3>
+        </div>
+      </div>  
+</body>

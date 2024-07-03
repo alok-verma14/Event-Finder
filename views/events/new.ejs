@@ -1,0 +1,84 @@
+<% layout("/layouts/boilerPlate") %>
+
+<body style="background-color: 	#343434;">
+   
+    <div class="card text-center mt-4 mb-5">
+        <div class="card-header">
+            <h3><i style="font-family: Arial, Helvetica, sans-serif;"> Add Your Event</i></h3>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title" style="font-family: Arial, Helvetica, sans-serif;">An easy way to share your events among world</h5>
+          <p class="card-text" style="font-family: Arial, Helvetica, sans-serif;">Fill this form and post your events easily...</p>
+        </div>
+    
+        <form class="mx-auto" method="POST" action= "/events/<%= currentUser.id %>" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Event Title: </label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="title">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Event Description </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="description">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Event Image: </label>
+                <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="image">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Event Time: (example- 2:30 PM)</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="time">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Event Date: (example- July 02, 2024): </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="date">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Event Fees: </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="fees">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Event Guest Name: </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="guest">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Address of Venue: </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="address">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Event's City: </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="city">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Event's State: </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="state">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Event's Country: </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="country">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Event's Pincode: </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="pincode">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Contact Number: </label>
+                <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="contact">
+            </div>
+            <div class="alert alert-warning" role="alert"  style="font-family: Arial, Helvetica, sans-serif;">
+                kindly read the above filled information twice before checking the checkbox.
+            </div>
+            
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1" style="font-family: Arial, Helvetica, sans-serif">All the informations are correct</label>
+            </div>
+    
+            <button type="submit" class="btn btn-danger mb-3" style="font-family: Arial, Helvetica, sans-serif;"> Post</button>
+    
+          </form>
+    
+        <div class="card-footer text-body-secondary">
+          <h5 style="font-family: cursive; "> After successful post, your event will be displayed to the Home page</h3>
+        </div>
+      </div>  
+</body>

@@ -1,0 +1,48 @@
+<% layout("/layouts/boilerPlate") %>
+
+<body style="background-color: #1B1212">
+    <div class="conatiner-fluid ms-5">
+        <div class="row">
+            <div class="row mt-4 mb-3 col-sm-4">
+                <div class="card mb-1" >
+                        <img src="http://localhost:5000/uploads/<%= event.image %>" class="card-img-top mt-3 mb-3" alt="User's Image">   
+                </div>  
+                <div class="card mt-2">
+                    <ul class="list-group list-group-flush"> 
+                        <li class="list-group-item" style="font-size:large; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Contact us on <i class="fa-solid fa-phone"></i> <i style="font-size:large;"><%= event.contact %></i></li>
+                        <a class="btn btn-warning mt-3" href="/events/<%= event._id %>/show/eventRegister" role="button"><i class="fa-solid fa-cart-shopping"></i> Register Here </a>
+                    </ul>
+                </div>  
+            </div>
+            <div class="row col-sm-8 mb-4 mt-3 ms-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-family: Arial, Helvetica, sans-serif;">Posted by @<i><%= creator.username %></i></h5>
+                        <p class="card-text" style="font-family:Arial, Helvetica, sans-serif;">Know the event better...</p>
+                        <ul class="list-group list-group-flush" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                            <li class="list-group-item" style="font-size:large;">Title:  <i style="font-size:large;"><%= event.title %></i></li>
+                            <li class="list-group-item" style="font-size:large;">Description:  <i style="font-size:large;"><%= event.description %></i></li>
+                            <li class="list-group-item" style="font-size:large;">Address:  <i style="font-size:large;"><i class="fa-solid fa-location-dot"></i> <%= event.address %>, <%= event.city %></i></li>
+                            <li class="list-group-item" style="font-size:large;">Registration Charge: <i style="font-size:large;">&#8377;<%= event.fees?.toLocaleString("en-IN") %></i></li>
+                            <li class="list-group-item" style="font-size:large;"> City: <i style="font-size:large;"><%= event.city %></i></li>
+                            <li class="list-group-item" style="font-size:large;">State:  <i style="font-size:large;"><%= event.state %></i></li>
+                            <li class="list-group-item" style="font-size:large;">Time: <i style="font-size:large;"><%= event.time %></i></li>
+                            <a class="btn btn-secondary mt-3" href="/events/<%= event._id %>/creator" role="button"><i class="fa-solid fa-backward"></i> Go to the <%= creator.username %>'s Profile </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <% if(currentUser && event.owner.equals(user._id)){ %>
+                <div class="row offset-1 mb-3 col-sm-2 ">
+                    <a class="btn btn-info" href="/events/<%= event._id %>/edit" role="button"><i class="fa-solid fa-pen-to-square"></i> Edit </a>
+                </div>
+                <div class="row mb-3 col-sm-2">
+                    <form action="/events/<%= event._id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger"><i class="fa-solid fa-delete-left"></i> Delete</button>
+                    </form>
+                </div>
+            <% } %>   
+
+        </div>
+    </div>
+</body>
