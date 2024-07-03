@@ -109,9 +109,9 @@ passport.authenticate('local', {failureRedirect: '/events/login', failureFlash: 
 );
 
 
-// app.get("/", (req,res)=>{
-//     res.send("Root Page");
-// })
+app.get("/", (req,res)=>{
+    res.send("Root Page");
+})
 
 app.get("/events", async(req,res)=>{
     const allEvents = await Event.find({});
