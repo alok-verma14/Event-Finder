@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": "v20.9.0"
+  },
   "name": "passport",
   "version": "1.0.0",
   "description": "",
