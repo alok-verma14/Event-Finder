@@ -109,7 +109,7 @@ passport.authenticate('local', {failureRedirect: '/events/login', failureFlash: 
 );
 
 
-app.get("/", (req,res)=>{
+app.get("https://event-finder.onrender.com/", (req,res)=>{
     res.send("Root Page");
 })
 
